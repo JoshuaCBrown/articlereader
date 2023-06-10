@@ -1,0 +1,33 @@
+:root {
+    display: grid;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+}
+
+.title {
+    text-align: center;
+}
+
+/* form {
+    height: 200px;
+    padding-top: 50px;
+}
+div.input {
+    border-radius: 5%;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.712),
+    5px 5px 10px rgba(70,70,70,0.12);
+}
+
+textarea {
+
+    border: none;
+    padding: 1rem;
+    border-radius: 5%;
+    background: none;
+
+    box-shadow: inset 2px 2px 5px rgba(255,255,255,0.5),
+    inset -2px 0px 10px rgba(70,70,70,0.12);
+
+    outline: none;
+}
+ */
