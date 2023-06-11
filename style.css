@@ -1,13 +1,138 @@
-:root {
+body {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(rgb(236, 230, 230), rgb(187, 229, 241));
+    height: 100vh;
+}
+
+.bigcontainer {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto;
+}
+
+.leftdiv,
+.rightdiv {
+    text-align: center;
+    padding-top: 10rem;
+    font-size: 1rem;
+}
+
+
+.container {
+    margin: auto;
     display: grid;
     justify-content: center;
-    background-color: rgb(228, 228, 228);
 }
 
 .title {
-    text-align: center;
+    text-shadow: 10px 4px 10px rgba(0, 0, 0, 0.418);
 }
 
+button#process {
+    background: linear-gradient(darkblue, purple);
+    color: lavenderblush;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 1rem;
+    height: 4rem;
+    width: 5rem;
+    justify-self: center;
+    margin: 1rem;
+    box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.418);
+}
+
+.checkboxes {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "allbox allbox allbox allbox"
+        ;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 10px;
+    background-color:none;
+    border-radius:4px;
+    border: none;
+    overflow:auto;
+    float:left;
+}
+
+
+
+.checkboxes label {
+    /* float: left; */
+    display: grid;
+    justify-content: center;
+}
+
+.checkboxes label span {
+    text-align:center;
+    padding:0px 0px;
+    display: grid;
+    width: 7rem;
+    box-shadow: -2px 0px 10px rgba(255, 255, 255, 0.74),
+    2px 2px 5px rgba(70,70,70,0.32);
+}
+
+.checkboxes label input {
+    position:absolute;
+    top:-20px;
+}
+
+.checkboxes input:checked + span {
+    /* background-color:#911;
+    color:#fff; */
+    box-shadow: inset 2px 2px 5px rgba(70,70,70,0.32),
+    inset -2px 0px 10px rgba(255, 255, 255, 0.74);
+}
+
+.checkboxes span:hover {
+    background: rgba(255, 255, 255, 0.185)
+}
+.checkboxes label.allboxclass {
+    grid-area: allbox;
+}
+
+.checkboxes label.allboxclass span {
+    width: 31rem;
+}
+/* div.checkboxes {
+    border-radius: 5%;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.712),
+    5px 5px 10px rgba(70,70,70,0.12);
+} */
+
+.title {
+    text-align: center;
+    ;
+}
+
+.input {
+    display: grid;
+    justify-content: center;
+}
+
+.innerinput {
+    display: grid;
+    /* justify-content: center; */
+    align-self: center;
+    border-radius: 2rem;
+    overflow: hidden;
+    padding-right:1rem;
+}
+
+button {
+    font-weight: bold;
+    height: 1.8rem;
+    border-radius: .5rem;
+    margin: .1rem;
+    border: none;
+}
 .date-btn {
     background-color: orange;
     color: white;
@@ -15,7 +140,7 @@
 
 .sig-btn {
     background-color: lightblue;
-    color: green;
+    color: black;
 }
 
 .overflow-btn {
@@ -33,22 +158,20 @@
     height: 200px;
     padding-top: 50px;
 }
-div.input {
+div.checkboxes {
     border-radius: 5%;
     box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.712),
     5px 5px 10px rgba(70,70,70,0.12);
 }
-
+*/
 textarea {
 
     border: none;
-    padding: 1rem;
-    border-radius: 5%;
-    background: none;
+    background: white;
 
     box-shadow: inset 2px 2px 5px rgba(255,255,255,0.5),
     inset -2px 0px 10px rgba(70,70,70,0.12);
 
     outline: none;
 }
- */
+

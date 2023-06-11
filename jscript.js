@@ -7,6 +7,7 @@ let wordsToExclude = [
     'These',
     'That',
     'Although',
+    'This',
 ];
 
 let dateIdentifiers = [
@@ -147,8 +148,8 @@ function showBtns() {
     const boxStatus = [
         allBox.checked,
         sigBox.checked,
-        spaceBox.checked,
         dateBox.checked,
+        spaceBox.checked,
         overFlowBox.checked,
     ];
     // if (boxStatus[0] === true) {
@@ -247,7 +248,7 @@ const process = document.querySelector('#process');
 const btn = process.addEventListener ('click', () => {
     const formContent = document.querySelector('#article').value;
     //replace line breaks with space, take out quote marks
-    const modFormContent = formContent.replace(/\n/g, ' ').replace(/[“"”]+/g, '');
+    const modFormContent = formContent.replace(/\n/g, '. ').replace(/[()“"”]+/g, '');
     sentenceArray = modFormContent.split('. ');
     wordsFromSentences(sentenceArray);
     console.log(sentenceArray);

@@ -6,39 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Finder</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="title">
-            <h1>Name/Company Finder</h1>
-            <h2>Article text:</h2>
+    <div class="bigcontainer">
+        <div class="leftdiv">
+            <p>input </p>
+            <p><span class="wordcounter"></span></p>
+            <p>output</p>
+            <p><span class="buttoncounter"></span></p>
         </div>
-        <div class="input">
-            <div class="innerinput">
-                 <!-- <label for="article">Article text</label> -->
-                <textarea autofocus required id="article" name="article" rows="20" cols="50"></textarea>
-                
+        <div class="container">
+            <div class="title">
+                <h1>Article Reader</h1>
+                <h2>text:</h2>
             </div>
-            <button id="process">Input</button>
-            <div class="checkboxes">
-                <input type="checkbox" id="allbox" name="allbox">
-                <label for="allbox">All</label>
-                <input type="checkbox" id="sigbox" name="sigbox">
-                <label for="sigbox">Most Likely Important</label>
-                <input type="checkbox" id="spacebox" name="spacebox">
-                <label for="spacebox">Space</label>
-                <input type="checkbox" id="datebox" name="datebox">
-                <label for="datebox">Time</label>
-                <input type="checkbox" id="overflowbox" name="overflowbox">
-                <label for="overflowbox">Overflow</label>
+            <div class="input">
+                <div class="innerinput">
+                    <!-- <label for="article">Article text</label> -->
+                    <textarea autofocus required id="article" name="article" rows="20" cols="50"></textarea>
+                    
+                </div>
+                <!-- <div class="processbtn"> -->
+                    <button id="process">READ</button>
+                <!-- </div> -->
+                <div class="checkboxes">
+                    <label class="allboxclass">
+                        <input type="checkbox" id="allbox" name="allbox" value="true"><span>all</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="sigbox" name="sigbox"><span>key</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="datebox" name="datebox"><span>time</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="spacebox" name="spacebox"><span>space</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="overflowbox" name="overflowbox"><span>overflow</span>
+                    </label>
+                </div>
+
             </div>
 
-        </div>
+            <div class="output">
 
-        <div class="output">
-
+            </div>
+            <div class="show-sentence"></div>
         </div>
-        <div class="show-sentence"></div>
+        <div class="rightdiv">
+            
+        </div>
     </div>
     <script src="jscript.js"></script>
 </body>
