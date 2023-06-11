@@ -8,6 +8,27 @@
     text-align: center;
 }
 
+.date-btn {
+    background-color: orange;
+    color: white;
+}
+
+.sig-btn {
+    background-color: lightblue;
+    color: green;
+}
+
+.overflow-btn {
+    background-color: green;
+    color: lightblue;
+}
+
+.space-btn {
+    background-color: greenyellow;
+    color: blue;
+}
+
+
 /* form {
     height: 200px;
     padding-top: 50px;
