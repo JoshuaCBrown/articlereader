@@ -13,21 +13,23 @@
 <body>
     <div class="bigcontainer">
         <div class="title">
-            <img src="/img/icons8-read-96.png">
-            <h2>Article</h2>
-            <h1>Reader</h1>
-            
+
+                <div class="con">
+                    <img src="/img/icons8-read-96.png">
+                    <h2>Article</h2>
+                    <h1>Reader</h1>
+                </div>
         </div>
         <div class="leftdiv">
-            <p>input </p>
-            <p><span class="wordcounter"></span></p>
-            <p>output</p>
-            <p><span class="buttoncounter"></span></p>
+            <div class="counter-box">
+                <p>input: <span class="wordcounter"></span></p>
+                <p>output: <span class="buttoncounter"></span></p>
+            </div>
         </div>
         <div class="container">
             
             <div class="input">
-                <div class="outerinput"
+                <div class="outerinput">
                     <div class="innerinput">
                         <!-- <label for="article">Article text</label> -->
                         <textarea autofocus required id="article" name="article" rows="20" cols="50"></textarea>
@@ -37,31 +39,33 @@
                 <!-- <div class="processbtn"> -->
                     <button id="process">READ</button>
                 <!-- </div> -->
-                <div class="checkboxes">
-                    <label class="allboxclass">
-                        <input type="checkbox" id="allbox" name="allbox" value="true"><span>all</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" id="sigbox" name="sigbox"><span>key</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" id="datebox" name="datebox"><span>time</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" id="spacebox" name="spacebox"><span>space</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" id="overflowbox" name="overflowbox"><span>overflow</span>
-                    </label>
+                    <div class="check-container">
+                        <div class="checkboxes">
+                            <label class="allboxclass">
+                                <input type="checkbox" id="allbox" name="allbox" value="true"><span>all</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="sigbox" name="sigbox"><span>key</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="datebox" name="datebox"><span>time</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="spacebox" name="spacebox"><span>space</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="overflowbox" name="overflowbox"><span>overflow</span>
+                            </label>
+                        </div>
+                    </div>
+
+            
+
+                <div class="output">
+
                 </div>
-
+                <div class="show-sentence"></div>
             </div>
-
-            <div class="output">
-
-            </div>
-            <div class="show-sentence"></div>
-        </div>
         <div class="rightdiv">
             
         </div>

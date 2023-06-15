@@ -74,10 +74,22 @@ let spaceIdentifiers = [
     'Parkway',
     'Interstate',
     'Street',
+    'S',
+    'N',
+    'W',
+    'E',
+    'NW',
+    'NE',
+    'SW',
+    'SE',
     'South',
     'North',
     'East',
     'West',
+    'Northwest',
+    'Northeast',
+    'Southwest',
+    'Southeast',
     'Rd',
     'Drive',
     'Dr',
@@ -92,6 +104,21 @@ let spaceIdentifiers = [
     'Delaware',
     'Florida',
 ]
+
+sigIdentifiers = [
+    'Construction',
+    'Development',
+    'Developers',
+    'Builders',
+    'Inc',
+    'LLC',
+    'Incorporated',
+    'Contractors',
+    'Constructors',
+    'Group',
+    'Capital',
+];
+
 function capFinder (myArr) {
     for (j = 0; j < myArr.length; ++j) {
         capArray[j] = [];
@@ -171,15 +198,16 @@ function showBtns() {
             }
         }
     };
-    for (i = 0; i < allBtns.length; ++i) {
-        btnText += (allBtns[i].textContent + ' ');
+    btnText = allBtns[0].textContent + ' ';
+    for (i = 1; i < allBtns.length; ++i) {
+        btnText += (' ' + allBtns[i].textContent);
     };
-    btnWords = btnText.split(' ');
+    btnWords = btnText.split(' ').filter( Boolean );
     buttonWordCount.textContent = btnWords.length + ' words';
     return;
 };
 
-function btnClass (str) {
+function btnClass(str) {
     if (dateIdentifiers.includes(str)) {
         return 'date-btn';
     };
@@ -188,6 +216,7 @@ function btnClass (str) {
     };
     let wordSplit = str.split(' ');
     for (h = 0; h < wordSplit.length; ++h) {
+        console.log(wordSplit[h]);
         if (dateIdentifiers.includes(wordSplit[h])) {
             return 'date-btn';
         }; 
@@ -197,9 +226,15 @@ function btnClass (str) {
             return 'space-btn';
         };
     };
-    return 'sig-btn';
+    for (l = 0; l < wordSplit.length; ++l) {
+        console.log(wordSplit[l]);
+        if (sigIdentifiers.includes(wordSplit[l]) === true) {
+            console.log(wordSplit[l]);
+            return 'likely';
+        };
     };
-    
+    return 'sig-button';
+};
 
 
 

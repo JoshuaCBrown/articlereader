@@ -32,15 +32,30 @@ h2 {
     margin: 0;
 }
 
-.leftdiv,
-.rightdiv {
-    text-align: right;
-    padding-top: 10rem;
-    font-size: 1rem;
+.title {
+    box-shadow: 0px 5px 20px black;
+    background-color: #f07c41;
+    margin-bottom: 3rem;
+    grid-area: head;
     display: grid;
-    grid-template-rows: 2;
+    justify-content: center;
 }
 
+.leftdiv,
+.rightdiv {
+    text-align: left;
+    font-size: 1rem;
+}
+
+.counter-box {
+    background-color: #87d5dd;
+    margin: 3rem;
+    width: 200px;
+    height: 100px;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.486);
+}
 
 .container {
     margin: 0;
@@ -48,12 +63,7 @@ h2 {
     justify-content: center;
 }
 
-.title {
-    box-shadow: 0px 5px 20px black;
-    background-color: #f07c41;
-    margin-bottom: 3rem;
-    grid-area: head;
-}
+
 
 button#process {
     background: #f07c41;
@@ -81,12 +91,19 @@ button#process:active {
     transform: scale(0.9);
     transition-duration: 500ms;
 }
+
+.check-container {
+    display: grid;
+    /* max-width:fit-content; */
+    justify-content: center;
+}
+
 .checkboxes {
     display: grid;
     justify-content: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "allbox allbox allbox allbox"
+        "allbox allbox"
         ;
     grid-template-rows: auto;
     gap: 1rem;
@@ -109,7 +126,7 @@ button#process:active {
 .checkboxes label span {
     text-align:center;
     font-size: 1.1rem;
-    padding:0px 0px;
+    padding: 14px 0px 5px 0px;
     display: grid;
     width: 7rem;
     height: 2rem;
@@ -119,8 +136,8 @@ button#process:active {
 }
 
 .checkboxes label input {
-    position:absolute;
-    top:-20px;
+    position: absolute;
+    top: 0px;
 }
 
 .checkboxes input:checked + span {
@@ -139,7 +156,7 @@ button#process:active {
 }
 
 .checkboxes label.allboxclass span {
-    width: 31rem;
+    width: 15rem;
 }
 /* div.checkboxes {
     border-radius: 5%;
@@ -195,23 +212,29 @@ button {
     border: none;
 }
 .date-btn {
-    background-color: orange;
-    color: white;
+    background-color: #87d5dd;
+    color: black;
 }
 
 .sig-btn {
-    background-color: lightblue;
+    background-color: #f07c41;
     color: black;
 }
 
 .overflow-btn {
-    background-color: green;
-    color: lightblue;
+    background-color: #02aec9;
+    color: white;
 }
 
 .space-btn {
-    background-color: greenyellow;
-    color: blue;
+    background-color: #04264c;
+    color: white;
+}
+
+.likely {
+    background-color: #f07c41;
+    color: white;
+    text-decoration: underline;
 }
 
 
