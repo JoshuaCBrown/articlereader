@@ -5,7 +5,11 @@ body {
     background: linear-gradient(rgb(236, 230, 230), rgb(187, 229, 241));
     height: 100vh;
 }
-
+h1 {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+    text-shadow: none;
+}
 .bigcontainer {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
@@ -28,10 +32,12 @@ body {
 
 .title {
     text-shadow: 10px 4px 10px rgba(0, 0, 0, 0.418);
+    background-color: #f07c41;
+    margin: 2rem;
 }
 
 button#process {
-    background: linear-gradient(darkblue, purple);
+    background: linear-gradient(purple, darkblue);
     color: lavenderblush;
     font-family: 'Kanit', sans-serif;
     font-weight: bold;
@@ -43,8 +49,18 @@ button#process {
     justify-self: center;
     margin: 1rem;
     box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.418);
+    transition-duration: .5s;
 }
 
+button#process:hover {
+    background: linear-gradient(lightblue, darkblue);  
+}
+
+button#process:active {
+    box-shadow: 0 0 0;
+    transform: scale(0.9);
+    transition-duration: 500ms;
+}
 .checkboxes {
     display: grid;
     justify-content: center;
@@ -72,9 +88,11 @@ button#process {
 
 .checkboxes label span {
     text-align:center;
+    font-size: 1.1rem;
     padding:0px 0px;
     display: grid;
     width: 7rem;
+    height: 2rem;
     box-shadow: -2px 0px 10px rgba(255, 255, 255, 0.74),
     2px 2px 5px rgba(70,70,70,0.32);
 }
@@ -175,3 +193,6 @@ textarea {
     outline: none;
 }
 
+.show-sentence {
+    text-transform: none;
+}
