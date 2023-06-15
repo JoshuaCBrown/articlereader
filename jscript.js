@@ -16,6 +16,13 @@ let wordsToExclude = [
     'Where',
     'What',
     'Who',
+    'If',
+    'Whenever',
+    'Whoever',
+    'Wherever',
+    'Therefore',
+    'There',
+    'In',
 ];
 
 let dateIdentifiers = [
@@ -95,14 +102,27 @@ let spaceIdentifiers = [
     'Dr',
     'Pkwy',
     'Alabama',
+    'AL',
     'Alaska',
+    'AK',
     'Arizona',
+    'AZ',
     'Arkansas',
+    'AR',
     'California',
+    'CA',
     'Colorado',
+    'CO',
     'Connecticut',
+    'CT',
     'Delaware',
+    'DE',
     'Florida',
+    'FL',
+    'Georgia',
+    'GA',
+    'Hawaii',
+    'HI',
 ]
 
 sigIdentifiers = [
@@ -111,12 +131,16 @@ sigIdentifiers = [
     'Developers',
     'Builders',
     'Inc',
+    'Incorporated',
     'LLC',
     'Incorporated',
     'Contractors',
     'Constructors',
     'Group',
     'Capital',
+    'Co',
+    'Company',
+    'Developer',
 ];
 
 function capFinder (myArr) {
