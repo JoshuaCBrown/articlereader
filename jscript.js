@@ -8,6 +8,14 @@ let wordsToExclude = [
     'That',
     'Although',
     'This',
+    'It\'s',
+    'Those',
+    'Without',
+    'Overall',
+    'When',
+    'Where',
+    'What',
+    'Who',
 ];
 
 let dateIdentifiers = [
@@ -137,11 +145,6 @@ function showBtns() {
     const dateBtns = document.querySelectorAll('.date-btn');
     const spaceBtns = document.querySelectorAll('.space-btn');
     const overFlowBtns = document.querySelectorAll('.overflow-btn');
-    for (i = 0; i < allBtns.length; ++i) {
-        btnText += (allBtns[i].textContent + ' ');
-    };
-    btnWords = btnText.split(' ');
-    buttonWordCount.textContent = btnWords.length + ' words';
     const btnArr = [
         allBtns,
         sigBtns,
@@ -168,6 +171,11 @@ function showBtns() {
             }
         }
     };
+    for (i = 0; i < allBtns.length; ++i) {
+        btnText += (allBtns[i].textContent + ' ');
+    };
+    btnWords = btnText.split(' ');
+    buttonWordCount.textContent = btnWords.length + ' words';
     return;
 };
 
