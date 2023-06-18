@@ -367,6 +367,7 @@ function btnClass(str) {
     if (!str.includes(' ')) {
         return 'overflow-btn';
     };
+    let wordSplit = str.split(' ');
     for (l = 0; l < wordSplit.length; ++l) {
         console.log(wordSplit[l]);
         if (sigIdentifiers.includes(wordSplit[l]) === true) {
@@ -374,7 +375,6 @@ function btnClass(str) {
             return 'good-btn';
         };
     };
-    let wordSplit = str.split(' ');
     for (h = 0; h < wordSplit.length; ++h) {
         console.log(wordSplit[h]);
         if (dateIdentifiers.includes(wordSplit[h])) {
