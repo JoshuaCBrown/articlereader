@@ -25,6 +25,28 @@ let wordsToExclude = [
     'In',
 ];
 
+let abbreviationToFix = [
+    'St.',
+    'Ln.',
+    'Dr.',
+    'Mr.',
+    'Jr.',
+    'Sr.',
+    'Mgr.',
+    'Bros.',
+];
+
+let fixedAbbreviations = [
+    'St',
+    'Ln',
+    'Mr',
+    'Dr',
+    'Jr',
+    'Sr',
+    'Mgr',
+    'Bros',
+];
+
 let dateIdentifiers = [
     'Monday',
     'Mon',
@@ -81,6 +103,12 @@ let spaceIdentifiers = [
     'Parkway',
     'Interstate',
     'Street',
+    'HWY',
+    'State',
+    'Route',
+    'SR',
+    'Ln',
+    'Circle',
     'S',
     'N',
     'W',
@@ -123,6 +151,98 @@ let spaceIdentifiers = [
     'GA',
     'Hawaii',
     'HI',
+    'Idaho',
+    'ID',
+    'Illinois',
+    'IL',
+    'Indiana',
+    'IN',
+    'Iowa',
+    'IA',
+    'Kansas',
+    'KS',
+    'Kentucky',
+    'KT',
+    'Louisiana',
+    'LA',
+    'Maine',
+    'MN',
+    'Maryland',
+    'MD',
+    'Massachussetts',
+    'MT',
+    'Michigian',
+    'MI',
+    'Minnesota',
+    'MN',
+    'Mississippi',
+    'MS',
+    'Missouri',
+    'MO',
+    'Montana',
+    'MT',
+    'Nebraska',
+    'NB',
+    'Nevada',
+    'NV',
+    'New',
+    'Hampshire',
+    'NH',
+    'Jersey',
+    'NJ',
+    'Mexico',
+    'NM',
+    'York',
+    'NY',
+    'Carolina',
+    'NC',
+    'Dakota',
+    'ND',
+    'Ohio',
+    'OH',
+    'Oklahoma',
+    'OK',
+    'Oregon',
+    'OR',
+    'Pennsylvania',
+    'PA',
+    'Rhode',
+    'Island',
+    'RI',
+    'SC',
+    'SD',
+    'Tennessee',
+    'TN',
+    'Texas',
+    'TX',
+    'Utah',
+    'UT',
+    'Vermont',
+    'VT',
+    'Virginia',
+    'VA',
+    'Washington',
+    'WA',
+    'WV',
+    'Wisconsin',
+    'WI',
+    'Wyoming',
+    'WY',
+    'Canada',
+    'America',
+    'United States',
+    'US',
+    'USA',
+    'Chicago',
+    'CHI',
+    'Boston',
+    'Atlanta',
+    'ATL',
+    'BOS',
+    'Los',
+    'Angeles',
+    'Santa',
+    'City'
 ]
 
 sigIdentifiers = [
@@ -141,6 +261,9 @@ sigIdentifiers = [
     'Co',
     'Company',
     'Developer',
+    'Department',
+    'Transportation',
+    'Dep.',
 ];
 
 function capFinder (myArr) {
@@ -192,12 +315,14 @@ function showBtns() {
     let btnText;
     console.log('fuck');
     const allBtns = document.querySelectorAll('.all-btn');
+    const goodBtns = document.querySelectorAll('.good-btn');
     const sigBtns = document.querySelectorAll('.sig-btn');
     const dateBtns = document.querySelectorAll('.date-btn');
     const spaceBtns = document.querySelectorAll('.space-btn');
     const overFlowBtns = document.querySelectorAll('.overflow-btn');
     const btnArr = [
         allBtns,
+        goodBtns,
         sigBtns,
         dateBtns,
         spaceBtns,
@@ -205,6 +330,7 @@ function showBtns() {
     ]
     const boxStatus = [
         allBox.checked,
+        goodBox.checked,
         sigBox.checked,
         dateBox.checked,
         spaceBox.checked,
@@ -226,8 +352,8 @@ function showBtns() {
     for (i = 1; i < allBtns.length; ++i) {
         btnText += (' ' + allBtns[i].textContent);
     };
-    btnWords = btnText.split(' ').filter( Boolean );
-    buttonWordCount.textContent = btnWords.length + ' words';
+    // btnWords = btnText.split(' ').filter( Boolean );
+    // buttonWordCount.textContent = btnWords.length + ' words';
     return;
 };
 
@@ -235,8 +361,18 @@ function btnClass(str) {
     if (dateIdentifiers.includes(str)) {
         return 'date-btn';
     };
+    if (spaceIdentifiers.includes(str)) {
+        return 'space-btn';
+    }
     if (!str.includes(' ')) {
         return 'overflow-btn';
+    };
+    for (l = 0; l < wordSplit.length; ++l) {
+        console.log(wordSplit[l]);
+        if (sigIdentifiers.includes(wordSplit[l]) === true) {
+            console.log(wordSplit[l]);
+            return 'good-btn';
+        };
     };
     let wordSplit = str.split(' ');
     for (h = 0; h < wordSplit.length; ++h) {
@@ -250,14 +386,12 @@ function btnClass(str) {
             return 'space-btn';
         };
     };
-    for (l = 0; l < wordSplit.length; ++l) {
-        console.log(wordSplit[l]);
-        if (sigIdentifiers.includes(wordSplit[l]) === true) {
-            console.log(wordSplit[l]);
-            return 'likely';
+    for (m = 0; m < wordSplit.length; ++m) {
+        if (spaceIdentifiers.includes(wordSplit[m]) === true) {
+            return 'space-btn';
         };
     };
-    return 'sig-button';
+    return 'sig-btn';
 };
 
 
@@ -319,10 +453,10 @@ const process = document.querySelector('#process');
 const btn = process.addEventListener ('click', () => {
     const formContent = myArticle.value;
     //replace line breaks with space, take out quote marks
-    const modFormContent = formContent.replace(/\n/g, '. ').replace(/[()“"”]+/g, '');
+    const modFormContent = formContent.replace(/\n/g, '. ').replace(/[/;()“"”]+/g, '');
     const allTheWords = modFormContent.split(' ');
     clearAll();
-    wordCount.textContent = allTheWords.length + ' words';
+    // wordCount.textContent = allTheWords.length + ' words';
     sentenceArray = modFormContent.split('. ');
     wordsFromSentences(sentenceArray);
     console.log(sentenceArray);
@@ -336,14 +470,17 @@ const wordSelect = output.addEventListener('click', (e) => {
     showSentence.textContent = sentenceArray[showId];
 });
 
-const dateBox = document.querySelector('#datebox');
+const goodBox = document.querySelector('#goodbox')
 const sigBox = document.querySelector('#sigbox');
+const dateBox = document.querySelector('#datebox');
 const spaceBox = document.querySelector('#spacebox');
 const overFlowBox = document.querySelector('#overflowbox');
 const allBox = document.querySelector('#allbox');
+goodBox.checked = true;
 sigBox.checked = true;
 
 allBox.addEventListener('change', () => {
+    goodBox.checked = allBox.checked;
     sigBox.checked = allBox.checked;
     dateBox.checked = allBox.checked;
     spaceBox.checked = allBox.checked;
@@ -351,6 +488,7 @@ allBox.addEventListener('change', () => {
     showBtns();
 });
 
+goodBox.addEventListener('change', showBtns);
 sigBox.addEventListener('change', showBtns);
 dateBox.addEventListener('change', showBtns);
 spaceBox.addEventListener('change', showBtns);
